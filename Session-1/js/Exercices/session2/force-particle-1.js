@@ -6,18 +6,20 @@ function setup() {
 
 function draw() {
     // an external force affects the particle acc
-    let gravity = createVector(random(-0.1,0.1), random(-0.1,0.2)); 
+    let gravity = createVector(0, 0.01); 
     particle.applyForce(gravity);
     particle.createParticle();
     particle.updateParticle();
+    // edges behaviour
+    if( particle.pos.y > height) {
+        gravity = -gravity;
+    }
 }
 
 // Classes
 class Particle {
     constructor(x,y){
-        this.x = x;
-        this.y = y;
-        this.pos = createVector(this.x, this.y);
+        this.pos = createVector(x, y);
         this.vel = createVector(0, 0);
         this.acc = createVector(0, 0);
     }
