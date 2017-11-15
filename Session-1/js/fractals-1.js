@@ -16,6 +16,7 @@ function draw() {
 // Circle function
 function circle(x, y, d) {
     noFill();
+    stroke(chooseColor(colors));
     ellipse(x, y, d, d);
     // we call ourselves to create the fractal
     // we need to set up a recursive limit to control infinity
