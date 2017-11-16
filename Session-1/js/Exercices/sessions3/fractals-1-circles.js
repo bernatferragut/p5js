@@ -10,6 +10,7 @@ function setup() {
 
 function draw() {
     circle(width/2, height/2, 700);
+    noLoop();
 }
 
 
@@ -20,7 +21,7 @@ function circle(x, y, d) {
     ellipse(x, y, d, d);
     // we call ourselves to create the fractal
     // we need to set up a recursive limit to control infinity
-    if ( d > 2) {
+    if ( d > 4) {
         circle(x + d/2 , y, d/2);
         circle(x - d/2 , y, d/2);
     }
@@ -32,3 +33,5 @@ function chooseColor(colors) {
     return colors[Math.floor(random(0,4))];
     
 }
+
+// canter set Fractal is next
