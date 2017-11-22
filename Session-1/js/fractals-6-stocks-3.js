@@ -11,7 +11,7 @@ function draw() {
     background(0);    
     angle = PI/4;
     stroke(255);
-    translate(width/3, height/1.5); //moves the (0,0) coord.
+    translate(width/4, height/1.5); //moves the (0,0) coord.
     stockA(500,1);
 }
 
@@ -30,7 +30,8 @@ function stockA(len, gen) {
     rotate(-angle*2);
     line(0,0,0,len);
     pop();
-    translate(0,len);
+    translate(0+len/3,len/3);
+    translate(0-len/800,len/3);
     rotate(-angle);
     // add gen
     gen ++;
